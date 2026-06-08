@@ -52,5 +52,6 @@ public class ArrayList_Operations {
 		//set
 		System.out.println(list1.set(1,1000));
 		System.out.println(list1);
+		System.out.println(list2);
 	}
 }
