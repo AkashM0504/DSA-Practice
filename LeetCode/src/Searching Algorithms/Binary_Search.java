@@ -1,5 +1,3 @@
-package Searching_Algorithm;
-
 class Logic{
 	public static int main_Logic(int arr[], int target, int low, int high) {
 		while(low<=high) {
