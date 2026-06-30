@@ -1,0 +1,36 @@
+package Sorting_Algorithms;
+
+import java.util.Arrays;
+
+class sorting{
+	public static int partition(int[] a, int least_index, int higher_index) {
+		int pivot=higher_index;
+		int j=least_index-1;
+		for(int i=least_index;i<=higher_index;i++) {
+			if(a[i]<=a[pivot]) {
+				j++;
+				int temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+		return j;
+	}
+	
+	public static void quicksort(int[] a,int least_index,int higher_index) {
+		if(least_index<higher_index) {
+			int pivot=partition(a, least_index, higher_index);
+			quicksort(a,least_index,pivot-1);
+			quicksort(a,pivot+1, higher_index);
+		}
+	}
+}
+
+public class Quick_Sort {
+	public static void main(String[] args) {
+		int[] a= {7,3,1,5,6,8,2,4};
+		sorting s=new sorting();
+		s.quicksort(a, 0, a.length-1);
+		System.out.println(Arrays.toString(a));
+	}
+}
